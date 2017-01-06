@@ -32,4 +32,5 @@ config :addict,
   user_schema: Imgmtn.User,
   repo: Imgmtn.Repo,
   from_email: "no-reply@example.com", # CHANGE THIS
-mail_service: nil
+  mail_service: nil,
+  post_logout: &Imgmtn.AddictPostActions.post_logout/3
