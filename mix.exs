@@ -42,6 +42,7 @@ defmodule Imgmtn.Mixfile do
       {:addict, "~> 0.3"},
       {:mailgun, github: "chrismccord/mailgun", branch: "master", override: true},
       {:credo, "~> 0.5", only: [:dev, :test]},
+      {:dogma, "~> 0.1", only: [:dev, :test]},
     ]
   end
 
@@ -52,8 +53,11 @@ defmodule Imgmtn.Mixfile do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"],
-     "test": ["ecto.create --quiet", "ecto.migrate", "test"]]
+    [
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "test": ["ecto.create --quiet", "ecto.migrate", "test"],
+      "testall": ["ecto.create --quiet", "ecto.migrate", "test", "dogma", "credo"]
+    ]
   end
 end
