@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Imgmtn!</title>
+    <title>Welcome to Imgmtn!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -16,7 +16,13 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <%= if Addict.Helper.is_logged_in(@conn) do %>
+              <li class='current_user'><%= Addict.Helper.current_user(@conn).email %></li>
+              <li><%= link 'Sign out', to: logout_path(@conn, :logout), method: :delete %></li>
+            <% else %>
+              <li><%= link 'Create an account', to: register_path(@conn, :register) %></li>
+              <li><%= link 'Log in', to: login_path(@conn, :login) %></li>
+            <% end %>
           </ul>
         </nav>
         <span class="logo"></span>
