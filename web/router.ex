@@ -1,5 +1,6 @@
 defmodule Imgmtn.Router do
   use Imgmtn.Web, :router
+  use Addict.RoutesHelper
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,10 +14,15 @@ defmodule Imgmtn.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/" do
+    addict :routes
+  end
+
   scope "/", Imgmtn do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
     resources "/users", UserController
   end
 
