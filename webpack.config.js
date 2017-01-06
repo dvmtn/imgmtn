@@ -2,7 +2,9 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-	entry: ["./web/static/css/app.css", "./web/static/js/app.js"],
+  devtool: 'source-map',
+
+	entry: ["./web/static/css/app.scss", "./web/static/js/app.js"],
 
 	output: {
 		path: "./priv/static",
