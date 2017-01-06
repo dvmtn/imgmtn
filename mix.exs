@@ -40,7 +40,8 @@ defmodule Imgmtn.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:addict, "~> 0.3"},
-      {:mailgun, github: "chrismccord/mailgun", branch: "master", override: true}
+      {:mailgun, github: "chrismccord/mailgun", branch: "master", override: true},
+      {:credo, "~> 0.5", only: [:dev, :test]},
     ]
   end
 
