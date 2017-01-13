@@ -12,6 +12,10 @@ defmodule Imgmtn.LoginTest do
 
     navigate_to("/")
     click({:link_text, "Log in"})
+    fill_field({:id, "txt-email"}, user.email)
+    fill_field({:id, "txt-password"}, "password")
+    click({:id, "btn-login"})
+    assert element_displayed?({:link_text, "Sign out"})
   end
 
 end
