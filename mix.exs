@@ -42,8 +42,6 @@ defmodule Imgmtn.Mixfile do
       {:phoenix_html, "~> 2.6"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:addict, "~> 0.3"},
-      {:mailgun, github: "chrismccord/mailgun", branch: "master", override: true},
     ]
   end
 

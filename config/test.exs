@@ -17,6 +17,3 @@ config :imgmtn, Imgmtn.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :hound, driver: "phantomjs"
-
-config :comeonin, :bcrypt_log_rounds, 4
-config :comeonin, :pbkdf2_rounds, 1

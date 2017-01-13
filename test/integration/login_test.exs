@@ -8,7 +8,7 @@ defmodule Imgmtn.LoginTest do
   end
 
   test "logging in" do
-    user = User.create(%{email: "test@example.com", name: "test user", password: "password"})
+    user = %User{email: "test@example.com", name: "test user", password: "password"} |> Repo.insert!
 
     navigate_to("/")
     click({:link_text, "Log in"})

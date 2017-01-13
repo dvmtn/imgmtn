@@ -14,18 +14,6 @@
   <body>
     <div class="container">
       <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <%= if Addict.Helper.is_logged_in(@conn) do %>
-              <li class='current_user'><%= Addict.Helper.current_user(@conn).email %></li>
-              <li><%= link 'Sign out', to: logout_path(@conn, :logout), method: :delete %></li>
-            <% else %>
-              <li><%= link 'Create an account', to: register_path(@conn, :register) %></li>
-              <li><%= link 'Log in', to: login_path(@conn, :login) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
