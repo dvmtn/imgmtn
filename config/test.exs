@@ -4,7 +4,7 @@ use Mix.Config
 # you can enable the server option below.
 config :imgmtn, Imgmtn.Endpoint,
   http: [port: 4001],
-  server: false
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
@@ -15,3 +15,5 @@ config :imgmtn, Imgmtn.Repo,
   database: "imgmtn_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :hound, driver: "phantomjs"

@@ -30,19 +30,34 @@ defmodule Imgmtn.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
+    prod_deps() ++ dev_test_deps() ++ dev_deps()
+  end
+
+  defp prod_deps do
     [
       {:phoenix, "~> 1.2.1"},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.6"},
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:addict, "~> 0.3"},
       {:mailgun, github: "chrismccord/mailgun", branch: "master", override: true},
+    ]
+  end
+
+  defp dev_test_deps do
+    [
       {:credo, "~> 0.5", only: [:dev, :test]},
       {:dogma, "~> 0.1", only: [:dev, :test]},
+      {:hound, "~> 1.0", only: [:dev, :test]},
+    ]
+  end
+
+  defp dev_deps do
+    [
+      {:phoenix_live_reload, "~> 1.0", only: :dev},
     ]
   end
 
