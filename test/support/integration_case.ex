@@ -18,11 +18,8 @@ defmodule Imgmtn.IntegrationCase do
     end
   end
 
-  setup tags do
-    unless tags[:async] do
-      # Ecto.Adapters.SQL.restart_test_transaction(Imgmtn.Repo, [])
-    end
-
-    :ok
+  setup do
+    # Explicitly get a connection before each test
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Imgmtn.Repo)
   end
 end
