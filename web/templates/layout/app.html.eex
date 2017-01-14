@@ -12,18 +12,38 @@
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-      </header>
+    <header>
+      <nav>
+        <div class="logo">Imgmtn</div>
+        <div class="top-menu">
+          <ul class="links">
+            <li>
+              <a href="/">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class='notices'>
+        <%
+          info = get_flash(@conn, :info)
+          error = get_flash(@conn, :error)
+        %>
+        <%= if info do %>
+          <p class="alert alert-info" role="alert"><%= info %></p>
+        <% end %>
+        <%= if error do %>
+          <p class="alert alert-error" role="alert"><%= error %></p>
+        <% end %>
+      </div>
+    </header>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    <main>
+      <%= render @view_module, @view_template, assigns %>
+    </main>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div> <!-- /container -->
+    <footer>
+      <p>A <a href="http://devmountain.co.uk">DevMtn</a> play project</p>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

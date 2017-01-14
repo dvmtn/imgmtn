@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html{
+  font-family:  'Montserrat', sans-serif;
+}
+
 body {
   color: $text;
   background-image: url(/images/bg.png);
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+main{
+  flex: 1;
 }
 
 a {
