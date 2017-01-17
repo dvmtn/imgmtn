@@ -19,31 +19,38 @@
           <ul class="links">
             <li>
               <a href="/">Home</a>
+              <%= if Coherence.logged_in?(@conn) do %>		
+                <li class='current_user'><%= @conn.assigns[:current_user].email %></li>		
+                <li><%= link 'Sign out', to: session_path(@conn, :delete), method: :delete %></li>		
+              <% else %>		
+                <li><%= link 'Create an account', to: registration_path(@conn, :new) %></li>		
+                <li><%= link 'Log in', to: session_path(@conn, :new) %></li>		
+              <% end %>
             </li>
           </ul>
         </div>
       </nav>
       <div class='notices'>
         <%
-          info = get_flash(@conn, :info)
-          error = get_flash(@conn, :error)
-        %>
-        <%= if info do %>
-          <p class="alert alert-info" role="alert"><%= info %></p>
-        <% end %>
-        <%= if error do %>
-          <p class="alert alert-error" role="alert"><%= error %></p>
-        <% end %>
-      </div>
-    </header>
+        info = get_flash(@conn, :info)
+        error = get_flash(@conn, :error)
+      %>
+      <%= if info do %>
+        <p class="alert alert-info" role="alert"><%= info %></p>
+      <% end %>
+      <%= if error do %>
+        <p class="alert alert-error" role="alert"><%= error %></p>
+      <% end %>
+    </div>
+  </header>
 
-    <main>
-      <%= render @view_module, @view_template, assigns %>
-    </main>
+  <main>
+    <%= render @view_module, @view_template, assigns %>
+  </main>
 
-    <footer>
-      <p>A <a href="http://devmountain.co.uk">DevMtn</a> play project</p>
-    </footer>
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-  </body>
+  <footer>
+    <p>A <a href="http://devmountain.co.uk">DevMtn</a> play project</p>
+  </footer>
+  <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+</body>
 </html>

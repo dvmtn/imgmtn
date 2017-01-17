@@ -2,6 +2,7 @@ defmodule Imgmtn.PageController do
   use Imgmtn.Web, :controller
 
   def index(conn, _params) do
-    render conn, "index.html", %{user: %{name: "anonymous"}}
+    user = conn.assigns[:current_user] || %{name: 'anonymous!'}
+    render conn, "index.html", %{user: %{name: user.name}}
   end
 end
