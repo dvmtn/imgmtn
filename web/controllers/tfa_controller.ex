@@ -7,14 +7,13 @@ defmodule Imgmtn.TfaController do
 
   def create(conn, params) do
     code = params["tfa"]["code"]
-    case code do
-      "1234" ->
+    secret = "MFRGGZDFMZTWQ2LK"
+    is_valid = :pot.valid_totp(code, secret, [last_30_seconds(), next_30_seconds()])
+    case is_valid do
+      true ->
         con = put_session(conn, :tfa, true)
-        IO.puts "Assigned tfa in con!"
-        IO.inspect con.assigns
         redirect(con, to: "/users")
       _ ->
-        IO.puts "Skipped tfa assignment"
         redirect(conn, to: "/tfa")
     end
   end
@@ -22,5 +21,13 @@ defmodule Imgmtn.TfaController do
   def delete(conn, _params) do
     con = put_session(conn, :tfa, false)
     redirect(con, to: "/")
+  end
+
+  defp last_30_seconds do
+    trunc(:os.system_time(:seconds) / 30) - 1
+  end
+
+  defp next_30_seconds do
+    trunc(:os.system_time(:seconds) / 30) + 1
   end
 end
