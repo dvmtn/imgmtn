@@ -1,0 +1,5 @@
+<h2>TFA</h2>
+<%= form_for @conn, tfa_path(@conn, :create), [as: :tfa], fn f -> %>
+  <%= text_input f, :code %>
+  <%= submit "Submit" %>
+<% end %>

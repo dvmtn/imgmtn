@@ -36,6 +36,7 @@
   "poison": {:hex, :poison, "2.2.0", "4763b69a8a77bd77d26f477d196428b741261a761257ff1cf92753a0d4d24a63", [:mix], []},
   "poolboy": {:hex, :poolboy, "1.5.1", "6b46163901cfd0a1b43d692657ed9d7e599853b3b21b95ae5ae0a777cf9b6ca8", [:rebar], []},
   "postgrex": {:hex, :postgrex, "0.13.0", "e101ab47d0725955c5c8830ae8812412992e02e4bd9db09e17abb0a5d82d09c7", [:mix], [{:connection, "~> 1.0", [hex: :connection, optional: false]}, {:db_connection, "~> 1.1", [hex: :db_connection, optional: false]}, {:decimal, "~> 1.0", [hex: :decimal, optional: false]}]},
+  "pot": {:hex, :pot, "0.9.5", "9009b0fbafab97581c7ff431fc6ccd33d1073adf3fda21075bb2600544e08ad9", [:rebar3], []},
   "ranch": {:hex, :ranch, "1.2.1", "a6fb992c10f2187b46ffd17ce398ddf8a54f691b81768f9ef5f461ea7e28c762", [:make], []},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.1", "28a4d65b7f59893bc2c7de786dec1e1555bd742d336043fe644ae956c3497fbe", [:make, :rebar], []},
   "swoosh": {:hex, :swoosh, "0.5.0", "eb2cdfa65fdc7a53be7c38353e0d7cd824aa69af3d4f110ade5416e98f167ec9", [:mix], [{:cowboy, "~> 1.0.0", [hex: :cowboy, optional: true]}, {:gen_smtp, "~> 0.11", [hex: :gen_smtp, optional: true]}, {:hackney, "~> 1.6", [hex: :hackney, optional: false]}, {:plug, "~> 1.1", [hex: :plug, optional: true]}, {:poison, "~> 1.5 or ~> 2.0 or ~> 3.0", [hex: :poison, optional: false]}]},

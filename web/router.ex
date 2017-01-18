@@ -24,9 +24,16 @@ defmodule Imgmtn.Router do
     plug Coherence.Authentication.Session, protected: true
   end
 
+  pipeline :tfa do
+    plug Imgmtn.Plugs.Tfa
+  end
+
   scope "/" do
     pipe_through :browser
-    coherence_routes
+    coherence_routes()
+    get "/tfa", Imgmtn.TfaController, :index
+    post "/tfa", Imgmtn.TfaController, :create
+    get "/tfa_delete", Imgmtn.TfaController, :delete
   end
 
   scope "/" do
@@ -36,16 +43,13 @@ defmodule Imgmtn.Router do
 
   scope "/", Imgmtn do
     pipe_through :browser
-
     get "/", PageController, :index
-
-    resources "/users", UserController
   end
 
   scope "/", Imgmtn do
-    pipe_through :protected
+    pipe_through [:protected, :tfa]
 
-    # add protected resources below
+    resources "/users", UserController
     resources "/privates", Imgmtn.PrivateController
   end
 
