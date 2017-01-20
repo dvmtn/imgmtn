@@ -40,3 +40,6 @@ config :imgmtn, Imgmtn.Repo,
   database: "imgmtn_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :mix_test_watch,
+  clear: true

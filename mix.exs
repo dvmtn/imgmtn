@@ -56,6 +56,7 @@ defmodule Imgmtn.Mixfile do
   defp dev_deps do
     [
       {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:mix_test_watch, "~> 0.2", only: :dev},
     ]
   end
 
