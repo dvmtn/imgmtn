@@ -1,7 +1,5 @@
 defmodule Imgmtn.User do
   use Imgmtn.Web, :model
-  alias Imgmtn.Repo
-  alias Imgmtn.User
 
   schema "users" do
     field :name, :string
