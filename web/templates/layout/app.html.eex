@@ -14,9 +14,12 @@
   <body>
     <header>
       <nav>
-        <div class="logo">Imgmtn</div>
         <div class="top-menu">
           <ul class="links">
+            <li class="logo">
+              <%= link 'Imgmtn', to: "/" %>
+            </li>
+            <li class="separator"></li>
             <li>
               <%= if Coherence.logged_in?(@conn) do %>
                 <li class='current_user'><%= @conn.assigns[:current_user].email %></li>
@@ -31,8 +34,8 @@
       </nav>
       <div class='notices'>
         <%
-        info = get_flash(@conn, :info)
-        error = get_flash(@conn, :error)
+info = get_flash(@conn, :info)
+error = get_flash(@conn, :error)
       %>
       <%= if info do %>
         <p class="alert alert-info" role="alert"><%= info %></p>

@@ -6,13 +6,13 @@ header{
     width: 100%;
     display: flex;
 
-    .logo{
-      margin-right: 2em;
-      padding: 15px;
-    }
-
     .top-menu{
       flex: 1;
+
+      .separator{
+        flex: 1;
+      }
+
       ul.links{
         display: flex;
         flex-flow: row wrap;
@@ -22,6 +22,10 @@ header{
           height: 100%;
           list-style: none;
           transition: all 0.3s;
+
+          &.logo a{
+            color: white;
+          }
 
           &:hover{
             background: blue;
