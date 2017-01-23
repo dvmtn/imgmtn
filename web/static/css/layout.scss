@@ -4,15 +4,15 @@ header{
   nav{
     background-color: $header-footer-bg;
     width: 100%;
+    display: flex;
 
     .logo{
-      display: inline-block;
       margin-right: 2em;
       padding: 15px;
     }
 
     .top-menu{
-      display: inline-block;
+      flex: 1;
       ul.links{
         display: flex;
         flex-flow: row wrap;

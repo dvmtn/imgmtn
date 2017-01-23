@@ -18,12 +18,11 @@
         <div class="top-menu">
           <ul class="links">
             <li>
-              <a href="/">Home</a>
               <%= if Coherence.logged_in?(@conn) do %>		
                 <li class='current_user'><%= @conn.assigns[:current_user].email %></li>		
                 <li><%= link 'Sign out', to: session_path(@conn, :delete), method: :delete %></li>		
               <% else %>		
-                <li><%= link 'Create an account', to: registration_path(@conn, :new) %></li>		
+                <li><%= link 'Register', to: registration_path(@conn, :new) %></li>		
                 <li><%= link 'Log in', to: session_path(@conn, :new) %></li>		
               <% end %>
             </li>
