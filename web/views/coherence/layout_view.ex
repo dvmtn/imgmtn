@@ -1,5 +1,3 @@
 defmodule Coherence.LayoutView do
-  use Imgmtn.Coherence.Web, :view
-
-
+  use Imgmtn.Web, :view
 end
