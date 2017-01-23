@@ -1,0 +1,22 @@
+.btn{
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px #333 solid;
+  background: white;
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+}
+
+.btn-progress{
+  @extend .btn;
+  background: $info;
+  color: white;
+}
+
+.btn-cancel{
+  @extend .btn;
+  background: $danger;
+  color: white;
+}

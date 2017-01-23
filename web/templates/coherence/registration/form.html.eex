@@ -13,33 +13,33 @@
   </div>
 
   <%= unless (login_field = Coherence.Config.login_field) == :email do %>
-    <div class="form-group">
+    <div class="form-group name">
       <%= required_label f, login_field, class: "control-label" %>
       <%= text_input f, login_field, class: "form-control", required: "" %>
       <%= error_tag f, login_field %>
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group email">
     <%= required_label f, :email, class: "control-label" %>
     <%= text_input f, :email, class: "form-control", required: "" %>
     <%= error_tag f, :email %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group password">
     <%= required_label f, :password, class: "control-label" %>
     <%= password_input f, :password, [class: "form-control"] ++ @required %>
     <%= error_tag f, :password %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group password_confirmation">
     <%= required_label f, :password_confirmation, class: "control-label" %>
     <%= password_input f, :password_confirmation, [class: "form-control"] ++ @required %>
     <%= error_tag f, :password_confirmation %>
   </div>
 
-  <div class="form-group">
-    <%= submit @label, class: "btn btn-primary" %>
-    <%= link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn" %>
+  <div class="form-group controls">
+    <%= link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn cancel" %>
+    <%= submit @label, class: "btn btn-progress" %>
   </div>
 <% end %>
