@@ -17,3 +17,5 @@ config :imgmtn, Imgmtn.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :hound, driver: "phantomjs"
+
+config :imgmtn, sql_sandbox: true

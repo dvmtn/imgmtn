@@ -3,7 +3,7 @@ defmodule Imgmtn.UserTest do
 
   alias Imgmtn.User
 
-  @valid_attrs %{email: "some content", encrypted_password: "some content", name: "some content"}
+  @valid_attrs %{email: "foo@bar.com", password: "some content", name: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

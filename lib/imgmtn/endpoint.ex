@@ -1,6 +1,10 @@
 defmodule Imgmtn.Endpoint do
   use Phoenix.Endpoint, otp_app: :imgmtn
 
+	if Application.get_env(:imgmtn, :sql_sandbox) do
+		plug Phoenix.Ecto.SQL.Sandbox
+	end
+
   socket "/socket", Imgmtn.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
