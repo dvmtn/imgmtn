@@ -40,3 +40,6 @@ config :coherence, Imgmtn.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: "your api key here"
 # %% End Coherence Configuration %%
+
+config :arc,
+  storage: Arc.Storage.Local

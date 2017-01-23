@@ -1,4 +1,6 @@
 %{"addict": {:hex, :addict, "0.3.0", "8cbf72bb80abe5cc2934dea1fa601eb4f7fd7fa9ea6869c9e47d24289a939d22", [:mix], [{:comeonin, "~> 2.1", [hex: :comeonin, optional: false]}, {:cowboy, "~> 1.0", [hex: :cowboy, optional: false]}, {:ecto, "~> 2.0", [hex: :ecto, optional: false]}, {:mailgun, "~> 0.1", [hex: :mailgun, optional: false]}, {:phoenix, "~> 1.1", [hex: :phoenix, optional: false]}]},
+  "arc": {:hex, :arc, "0.6.0", "f4ef95b4e72ec5bce8db3474245e8202938b45e431adb34b20a8cda18d98373b", [:mix], [{:ex_aws, "~> 1.0.0", [hex: :ex_aws, optional: true]}, {:httpoison, "~> 0.8", [hex: :httpoison, optional: false]}, {:poison, "~> 2.0 or ~> 3.0", [hex: :poison, optional: true]}, {:sweet_xml, "~> 0.5", [hex: :sweet_xml, optional: true]}]},
+  "arc_ecto": {:hex, :arc_ecto, "0.5.0", "ae5369e3c9a956bd7eacf1d8e2163970cfc2cf6c2e9ce79eeef91888e6f6a05e", [:mix], [{:arc, "~> 0.6.0", [hex: :arc, optional: false]}, {:ecto, "~> 2.0", [hex: :ecto, optional: false]}]},
   "base64url": {:hex, :base64url, "0.0.1", "36a90125f5948e3afd7be97662a1504b934dd5dac78451ca6e9abf85a10286be", [:rebar], []},
   "bunt": {:hex, :bunt, "0.1.6", "5d95a6882f73f3b9969fdfd1953798046664e6f77ec4e486e6fafc7caad97c6f", [:mix], []},
   "certifi": {:hex, :certifi, "0.7.0", "861a57f3808f7eb0c2d1802afeaae0fa5de813b0df0979153cbafcd853ababaf", [:rebar3], []},

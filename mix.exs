@@ -19,7 +19,7 @@ defmodule Imgmtn.Mixfile do
   def application do
     [mod: {Imgmtn, []},
      applications: [:coherence, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :arc_ecto]]
   end
 
   # Specifies which paths to compile per environment.
@@ -43,6 +43,7 @@ defmodule Imgmtn.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:coherence, "~> 0.3"},
+      {:arc_ecto, "~> 0.5.0"},
     ]
   end
 
