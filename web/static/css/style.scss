@@ -20,7 +20,17 @@ a {
   color: $secondary;
 }
 
-button{
+button,
+input{
   font-family:  'Montserrat', sans-serif;
 }
 
+input{
+  border: none;
+  height: 1.5em;
+  font-size: 1.25em;
+  background: rgba(255, 255, 255, 0.25);
+  &:focus{
+    background: rgba(255, 255, 255, 0.75);
+  }
+}

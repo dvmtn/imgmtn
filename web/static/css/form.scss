@@ -1,3 +1,33 @@
-form{
+.registration-form{
+  margin: 2em auto;
+  display: block;
 
+  form{
+    margin: auto;
+    display: table;
+    text-align: center;
+    border-collapse: separate; 
+    border-spacing: 0.5em;
+  }
+
+  .form-row{
+    display: table-row;
+  }
+
+  .control-label{
+    display: table-cell;
+    text-align: right;
+    padding-right: 0.5em;
+  }
+
+  .form-control{
+    display: table-cell;
+  }
+
+  .control-col{
+    display: table-cell;
+    padding-top: 2em;
+    &:first-child{ text-align: left; }
+    &:last-child{ text-align: right; }
+  }
 }

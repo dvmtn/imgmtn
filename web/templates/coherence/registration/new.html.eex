@@ -1,4 +1,5 @@
-<h3>Register Account</h3>
+<h3>Register</h3>
+<p>We need a few details to create a new account for you, and then you'll be ready to join the fun!</p>
 
 <%= render "form.html", changeset: @changeset,
                         label: "Register", required: [required: ""],
