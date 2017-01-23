@@ -19,7 +19,6 @@ header{
         justify-content: flex-end;
 
         li{
-          padding: 15px;
           height: 100%;
           list-style: none;
           transition: all 0.3s;
@@ -31,8 +30,47 @@ header{
           }
 
           a{
+            display: block;
+            height: 100%;
+            width: 100%;
+            padding: 15px;
             text-decoration: none;
             color: #bbb;
+            pointer-events: auto;
+          }
+
+          &.register{
+            color: $info;
+            position: relative;
+            overflow: hidden;
+            &:after{
+              content: "";
+              position: absolute;
+              top: -110%;
+              left: -175%;
+              width: 175%;
+              height: 175%;
+              opacity: 0;
+              transform: rotate(15deg);
+              pointer-events: none;
+
+              background: rgba(255, 255, 255, 0.13);
+              background: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0.13) 0%,
+              rgba(255, 255, 255, 0.13) 77%,
+              rgba(255, 255, 255, 0.5) 92%,
+              rgba(255, 255, 255, 0.0) 100%
+              );
+            }
+            &:hover:after{
+              opacity: 1;
+              top: -30%;
+              left: -25%;
+              transition-property: left, top, opacity;
+              transition-duration: 0.7s, 0.7s, 0.15s;
+              transition-timing-function: ease;
+            }
           }
         }
       }
