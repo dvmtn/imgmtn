@@ -47,6 +47,7 @@ defmodule Imgmtn.Router do
 
     # add protected resources below
     resources "/privates", Imgmtn.PrivateController
+    post "/image", ImageController, :upload
   end
 
   # Other scopes may use custom stacks.
