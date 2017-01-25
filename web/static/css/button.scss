@@ -1,28 +1,41 @@
+$box-shadow-spread: 15px;
+
 .btn{
   display: inline-block;
   padding: 5px 10px;
   border-radius: 3px;
-  border: 1px #333 solid;
+  border: 0 #333 solid;
   background: white;
   text-decoration: none;
   font-size: 16px;
   color: black;
-  transition: zoom 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 
   &:hover{
-    box-shadow: 0 0 1px black;
-    zoom: 0.95;
-    border-size: 3px;
+    box-shadow: 0 0 $box-shadow-spread white;
+  }
+
+  &:active{
+    transform: scale(0.95);
+    box-shadow: inset 0 0 10px black;
+  }
+
+  &:focus{
+    outline: none;
   }
 
   &.progress{
     background: $info;
     color: white;
+    &:hover{ box-shadow: 0 0 $box-shadow-spread $info; }
+    &:active{ box-shadow: inset 0 0 10px black; }
   }
 
   &.cancel{
     background: $danger;
     color: white;
+    &:hover{ box-shadow: 0 0 $box-shadow-spread $danger; }
+    &:active{ box-shadow: inset 0 0 10px black; }
   }
 }
