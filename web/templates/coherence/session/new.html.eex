@@ -23,10 +23,10 @@
 
     <div class="form-row controls">
       <div class="control-col">
-        <%= link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn" %>
+        <%= link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn cancel" %>
       </div>
       <div class="control-col">
-        <%= submit "Sign In", class: "btn btn-primary sign-in" %>
+        <%= submit "Sign In", class: "btn progress sign-in" %>
       </div>
     </div>
 

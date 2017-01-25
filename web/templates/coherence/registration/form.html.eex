@@ -44,7 +44,7 @@
         <%= link "Cancel", to: Coherence.Config.logged_out_url("/"), class: "btn cancel" %>
       </div>
       <div class="control-col">
-        <%= submit @label, class: "btn btn-progress" %>
+        <%= submit @label, class: "btn progress" %>
       </div>
     </div>
   <% end %>

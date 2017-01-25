@@ -7,16 +7,22 @@
   text-decoration: none;
   font-size: 16px;
   color: black;
-}
+  transition: zoom 0.3s;
+  cursor: pointer;
 
-.btn-progress{
-  @extend .btn;
-  background: $info;
-  color: white;
-}
+  &:hover{
+    box-shadow: 0 0 1px black;
+    zoom: 0.95;
+    border-size: 3px;
+  }
 
-.btn-cancel{
-  @extend .btn;
-  background: $danger;
-  color: white;
+  &.progress{
+    background: $info;
+    color: white;
+  }
+
+  &.cancel{
+    background: $danger;
+    color: white;
+  }
 }
