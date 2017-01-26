@@ -62,11 +62,17 @@ defmodule Imgmtn.Mixfile do
     [
       {:phoenix_live_reload, "~> 1.0"},
       {:mix_test_watch, "~> 0.2"},
+      {:edeliver, "~> 1.4.0"},
+      {:distillery, ">= 0.8.0", warn_missing: false},
     ]
   end
 
   defp dep_group load_envs, deps do
     Enum.map(deps, fn dep -> only_load(dep, load_envs) end)
+  end
+
+  defp only_load({name, version, opts}, load_envs) do
+    {name, version, Keyword.merge(opts, only: load_envs)}
   end
 
   defp only_load(dep, load_envs) do
