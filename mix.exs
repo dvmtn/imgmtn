@@ -48,19 +48,29 @@ defmodule Imgmtn.Mixfile do
   end
 
   defp dev_test_deps do
+    dep_group [:dev, :test],
     [
-      {:credo, "~> 0.5", only: [:dev, :test]},
-      {:dogma, "~> 0.1", only: [:dev, :test]},
-      {:hound, "~> 1.0", only: [:dev, :test]},
-      {:ex_unit_notifier, "~> 0.1", only: [:dev, :test]},
+      {:credo, "~> 0.5"},
+      {:dogma, "~> 0.1"},
+      {:hound, "~> 1.0"},
+      {:ex_unit_notifier, "~> 0.1"},
     ]
   end
 
   defp dev_deps do
+    dep_group :dev,
     [
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:mix_test_watch, "~> 0.2", only: :dev},
+      {:phoenix_live_reload, "~> 1.0"},
+      {:mix_test_watch, "~> 0.2"},
     ]
+  end
+
+  defp dep_group load_envs, deps do
+    Enum.map(deps, fn dep -> only_load(dep, load_envs) end)
+  end
+
+  defp only_load(dep, load_envs) do
+    Tuple.append(dep, only: load_envs)
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
